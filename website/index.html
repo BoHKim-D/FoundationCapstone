@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Bo's Capstone</title>
+</head>
+<body>
+    <section id = "header">
+        <div class = "header container">
+            <div class ="nav-bar">
+                <div class ="brand">
+                    <a href="#hero"><h1>Bo <span>Kim</span></h1></a>
+                </div>
+                <div class = "nav-list">
+                    <div class = "hamburger"><div class = "bar"></div></div>
+                    <ul>
+                        <li><a href = "#hero" data-after="Home">Home</a></li>
+                        <li><a href = "#fortune" data-after="fortune">fortune</a></li>
+                        <li><a href = "#league" data-after="League of Legends">League of Legends</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id = "hero">
+        <div class = "hero container">
+            <div>
+                <h1>Hello,<span></span></h1> 
+                <h1>My name is<span></span></h1>
+                <h1>Bo Kim<span></span></h1>
+            </div>
+        </div>
+    </section>
+    <section id = "fortune">
+        <div class = "fortune container">
+            <div class = 'fortune-top'>
+                <h1 class = "fortune-title">Fortune <span>for</span> you!</h1>
+                <div>
+                    <button id = 'fortuneButton' align="center">get your fortune for today!</button>
+                </div>
+                <div>
+                    <button id = 'luckyButton' align="center">get your lucky number!</button>
+                </div>
+            </div>
+            <div>
+                <h1 id = 'result'></h1>
+            </div>
+            <div>
+                <h1 id = 'numResult'></h1>
+            </div>
+        </div>
+        <div class = "fortune-bottom">
+        </div>
+    </section>
+    <section id = "league">
+        <div class="league container">
+            <div class="league-header">
+                <h1 class="league-title">League of Legends <span>Random Champion</span></h1>
+            </div>
+            <div>
+                <button id = 'leagueButton' align="center">Who is your Champion of the day?</button>
+            </div>
+            <div id = "nameContainer">
+                <h1 class="league-charname"></h1>
+                <img id = 'faveButton'>
+            </div>
+            <div class="league-result">
+                <img class="league-chsplash" ></img>
+                <h1 class="league-chlore"></h1>
+            </div>
+        </div>
+    </section>
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src = "index.js"></script>
+</body>
+</html>
