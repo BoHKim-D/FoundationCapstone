@@ -1,4 +1,4 @@
-const localURL = "http://localhost:4004/api"
+const localURL = "http://localhost:5050/api"
 const leagueURL = 'https://ddragon.leagueoflegends.com/cdn'
 const champions = "/12.5.1/data/en_US"
 const splash = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading"
@@ -64,9 +64,9 @@ function faveButtonChange() {
     })
     axios.get(`${localURL}/faveChamp`).then(res => {
         if(res.data.includes(champName)) {
-            faveButton.setAttribute('src','/image/favedButton.png')
+            faveButton.setAttribute('src','./image/favedButton.png')
         } else {
-            faveButton.src = '/image/faveButton.png'
+            faveButton.src = './image/faveButton.png'
         }
     })
 }
