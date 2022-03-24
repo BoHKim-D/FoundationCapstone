@@ -273,10 +273,6 @@ html {
     display: flex;
     flex-direction: row;
 }
-.league-chsplash {
-    width:fit-content;
-    height:auto;
-}
 .league-result {
     display: flex;
     flex-direction: row;
