@@ -7,6 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, "../public/image")))
+
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/index.html"))
 })
@@ -15,9 +17,6 @@ app.get("/styles", function(req, res) {
 })
 app.get("/js", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/index.js"))
-})
-app.get("/images", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/image"))
 })
 
 const fortune = ["A pleasant surprise is waiting for you.",
