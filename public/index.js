@@ -18,14 +18,14 @@ const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
 const header = document.querySelector('.header.container')
 
 function fortune() {
-    axios.get(`${localURL}/fortune`).then(res => {
+    axios.get(`/api/fortune`).then(res => {
         // alert(res.data);
         resultBox.textContent = res.data;
     })
 };
 
 function luckyNum(e) {
-    axios.get(`${localURL}/luckyNumber`).then(res => {
+    axios.get(`/api/luckyNumber`).then(res => {
         e.preventDefault();
         luckyResult.textContent = res.data;
         
@@ -47,7 +47,7 @@ function leagueChamp() {
             leagueChLore[0].textContent = chName[0].lore
         })
     })
-    axios.get(`${localURL}/faveChamp`).then(res => {
+    axios.get(`/api/faveChamp`).then(res => {
         const champName = leagueChName[0].innerHTML
         if(res.data.includes(champName)) {
             faveButton.setAttribute('src','./image/favedButton.png')
@@ -59,10 +59,10 @@ function leagueChamp() {
 
 function faveButtonChange() {
     const champName = leagueChName[0].innerHTML
-    axios.post(`${localURL}/faveChamp`, {name:champName}).then(res => {  
+    axios.post(`/api/faveChamp`, {name:champName}).then(res => {  
         
     })
-    axios.get(`${localURL}/faveChamp`).then(res => {
+    axios.get(`/api/faveChamp`).then(res => {
         if(res.data.includes(champName)) {
             faveButton.setAttribute('src','./image/favedButton.png')
         } else {
