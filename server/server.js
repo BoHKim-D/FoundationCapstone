@@ -7,7 +7,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../website")));
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../website/index.html"))
+})
+app.get("/styles", function (req, res) {
+  res.sendFile(path.join(__dirname, "../website/index.css"))
+})
+app.get("/js", function (req, res) {
+  res.sendFile(path.join(__dirname, "../website/index.js"))
+})
+app.use("/image", express.static(path.join(__dirname, "../image")));
 
 const fortune = ["A pleasant surprise is waiting for you.",
   "A smooth long journey! Great expectations.",
