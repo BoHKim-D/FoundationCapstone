@@ -35,7 +35,7 @@ function luckyNum(e) {
 function leagueChamp() {
 
     axios.get(`${leagueURL}${champions}/champion.json`).then(res => {
-        faveButton.src = '../image/faveButton.png'
+        faveButton.src = './image/faveButton.png'
         faveButton.setAttribute('height','32px')
         faveButton.setAttribute('width','32px')
         const name = Object.keys(res.data.data)
@@ -50,9 +50,9 @@ function leagueChamp() {
     axios.get(`${localURL}/faveChamp`).then(res => {
         const champName = leagueChName[0].innerHTML
         if(res.data.includes(champName)) {
-            faveButton.setAttribute('src','../image/favedButton.png')
+            faveButton.setAttribute('src','./image/favedButton.png')
         } else {
-            faveButton.src = '../image/faveButton.png'
+            faveButton.src = './image/faveButton.png'
         }
     })
 };
@@ -64,9 +64,9 @@ function faveButtonChange() {
     })
     axios.get(`${localURL}/faveChamp`).then(res => {
         if(res.data.includes(champName)) {
-            faveButton.setAttribute('src','../image/favedButton.png')
+            faveButton.setAttribute('src','/image/favedButton.png')
         } else {
-            faveButton.src = '../image/faveButton.png'
+            faveButton.src = '/image/faveButton.png'
         }
     })
 }
