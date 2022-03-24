@@ -52,8 +52,8 @@ app.get("/api/faveChamp", (req, res) => {
   res.status(200).send(faveChamps)
 })
 
-const PORT_NUMBER = process.env.PORT || 4004;
+const port = process.env.PORT || 5050;
 
-app.listen(PORT_NUMBER, () => {
+app.listen(port, () => {
     console.log('WE ARE LIVE!')
 })
