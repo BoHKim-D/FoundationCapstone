@@ -264,13 +264,18 @@ html {
 #eightball .eightball-title span {
     color: crimson;
 }
+#eightballimg{
+    width: 500px;
+    height: 500px;
+}
 #eightballimg:active {
     animation: shake 0.5s;
 }
-#eightball .eightballResponse {
-    margin-top: 20px;
+#eightball #response{
+    margin-top:20px;
     font-size: 2rem;
 }
+
 /* league section */
 #league {
     background-image: url(./image/S_R.jpg);
