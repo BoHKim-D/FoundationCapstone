@@ -22,6 +22,27 @@ const fortune = ["A pleasant surprise is waiting for you.",
 
 const luckyNum = ['1','2','3','4','5','6','7','8','9','10'];
 
+const eightballRes = ["As I see it, yes.", 
+  "Ask again later.", 
+  "Better not tell you now.", 
+  "Cannot predict now.", 
+  "Concentrate and ask again.",
+  "Don't count on it.", 
+  "It is certain.", 
+  "It is decidedly so.", 
+  "Most likely.", 
+  "My reply is no.", 
+  "My sources say no.",
+  "Outlook not so good.", 
+  "Outlook good.", 
+  "Reply hazy, try again.",
+  "Signs point to yes.", 
+  "Very doubtful.", 
+  "Without a doubt.",
+  "Yes.", 
+  "Yes.... definitely.", 
+  "You may rely on it."]
+
 let faveChamps = [];
 
 app.get("/api/fortune", (req, res) => {
@@ -36,7 +57,11 @@ app.get("/api/luckyNumber", (req, res) => {
 
   res.status(200).send(`Your lucky number is ${randomNumber}!`);
 })
-
+app.get("/api/eightball", (req, res) => {
+  let randomIndex = Math.floor(Math.random()*eightballRes.length);
+  let randomres = eightballRes[randomIndex];
+  res.status(200).send(randomres);
+})
 app.post("/api/faveChamp", (req, res) => {
   if(faveChamps.includes(req.body.name)){
     let index = faveChamps.indexOf(req.body.name)
@@ -52,7 +77,7 @@ app.get("/api/faveChamp", (req, res) => {
   res.status(200).send(faveChamps)
 })
 
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 4040;
 
 app.listen(port, () => {
     console.log('WE ARE LIVE!')

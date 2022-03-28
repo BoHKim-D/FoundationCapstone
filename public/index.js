@@ -16,6 +16,8 @@ const faveButton = document.getElementById('faveButton')
 const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
 const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
 const header = document.querySelector('.header.container')
+const eightballImg = document.getElementById('eightballimg')
+const eightballResponse = document.getElementById('response')
 
 function fortune() {
     axios.get(`/api/fortune`).then(res => {
@@ -32,8 +34,13 @@ function luckyNum(e) {
     })
 };
 
-function leagueChamp() {
+function eightballRess() {
+    axios.get(`/api/eightball`).then(res => {
+        eightballResponse.textContent = res.data;     
+    })
+};
 
+function leagueChamp() {
     axios.get(`${leagueURL}${champions}/champion.json`).then(res => {
         faveButton.src = './image/faveButton.png'
         faveButton.setAttribute('height','32px')
@@ -44,7 +51,7 @@ function leagueChamp() {
         leagueChImg[0].src = `${splash}/${randomName}_0.jpg`;
         axios.get(`https://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/${randomName}.json`).then(res => {
             const chName = Object.values(res.data.data)
-            leagueChLore[0].textContent = chName[0].lore
+            leagueChLore[0].textContent = 'Lore: ' + chName[0].lore
         })
     })
     axios.get(`/api/faveChamp`).then(res => {
@@ -73,6 +80,7 @@ function faveButtonChange() {
 
 fortuneBtn.addEventListener('click',fortune);
 luckyBtn.addEventListener('click',luckyNum);
+eightballImg.addEventListener('click', eightballRess);
 leagueButton.addEventListener('click',leagueChamp);
 faveButton.addEventListener('click',faveButtonChange);
 hamburger.addEventListener('click', () => {
