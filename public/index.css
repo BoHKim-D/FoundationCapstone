@@ -180,7 +180,6 @@ html {
     font-size: 4rem;
     position: relative;
     color: transparent;
-    text-transform: uppercase;
     animation: text_reveal .5s ease forwards;
     animation-delay: 1.5s;
 }
