@@ -20,14 +20,14 @@ const eightballImg = document.getElementById('eightballimg')
 const eightballResponse = document.getElementById('response')
 
 function fortune() {
-    axios.get(`${localURL}/api/fortune`).then(res => {
+    axios.get(`/api/fortune`).then(res => {
         // alert(res.data);
         resultBox.textContent = res.data;
     })
 };
 
 function luckyNum(e) {
-    axios.get(`${localURL}/api/luckyNumber`).then(res => {
+    axios.get(`/api/luckyNumber`).then(res => {
         e.preventDefault();
         luckyResult.textContent = res.data;
         
@@ -35,7 +35,7 @@ function luckyNum(e) {
 };
 
 function eightballRess() {
-    axios.get(`${localURL}/api/eightball`).then(res => {
+    axios.get(`/api/eightball`).then(res => {
         eightballResponse.textContent = res.data;     
     })
 };
@@ -66,10 +66,10 @@ function leagueChamp() {
 
 function faveButtonChange() {
     const champName = leagueChName[0].innerHTML
-    axios.post(`${localURL}/api/faveChamp`, {name:champName}).then(res => {  
+    axios.post(`/api/faveChamp`, {name:champName}).then(res => {  
         
     })
-    axios.get(`${localURL}/api/faveChamp`).then(res => {
+    axios.get(`/api/faveChamp`).then(res => {
         if(res.data.includes(champName)) {
             faveButton.setAttribute('src','./image/favedButton.png')
         } else {
