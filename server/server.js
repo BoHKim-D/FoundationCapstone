@@ -63,6 +63,7 @@ app.get("/api/eightball", (req, res) => {
   res.status(200).send(randomres);
 })
 app.post("/api/faveChamp", (req, res) => {
+  console.log(req.body.name)
   if(faveChamps.includes(req.body.name)){
     let index = faveChamps.indexOf(req.body.name)
     faveChamps.splice(index, 1)

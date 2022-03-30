@@ -150,6 +150,13 @@ html {
 #header .hamburger.active .bar::after {
     top: 0;
 }
+#home {
+    background-image: URL(./image/bg3.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
 #home::after {
     content: '';
     position: absolute;
@@ -173,6 +180,7 @@ html {
     font-size: 4rem;
     position: relative;
     color: transparent;
+    text-transform: uppercase;
     animation: text_reveal .5s ease forwards;
     animation-delay: 1.5s;
 }
@@ -278,13 +286,13 @@ html {
 
 /* league section */
 #league {
-    background-image: url(./image/S_R.jpg);
+    background-image: url(./image/S_R4.jpg);
     background-size: cover;
     background-position: top center;
     position: relative;
     z-index: 1;
 }
-#league::after {
+/* #league::after {
     content: '';
     position: absolute;
     left: 0;
@@ -292,9 +300,9 @@ html {
     height: 100%;
     width: 100%;
     background-color: white;
-    opacity: .2;
+    opacity: .1;
     z-index: -1
-}
+} */
 #league .league {
     
     flex-direction: column;
@@ -306,7 +314,7 @@ html {
 #league .league-title {
     font-size: 4rem;
     font-weight: 800;
-    color: black;
+    color: white;
     margin-bottom: 100px;
     text-transform: uppercase;
     letter-spacing: .2rem;
@@ -325,8 +333,8 @@ html {
 #nameContainer {
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 10px 10px azure;
-    background-color: azure;
+    /* box-shadow: 0 0 10px 10px azure;
+    background-color: azure; */
 }
 
 .league-result {
@@ -348,8 +356,8 @@ html {
     margin-bottom: 50px;
     font-size: 2rem;
     line-height: 30px;
-    box-shadow: 0 0 10px 10px azure;
-    background-color: azure;
+    /* box-shadow: 0 0 10px 10px azure;
+    background-color: azure; */
     z-index: 1;
     border-radius: 50px;
 }
@@ -365,7 +373,7 @@ button {
 	font-family: "Work Sans", sans-serif;
 	font-weight: 500;
 	letter-spacing: 0.04em;
-	mix-blend-mode: color-dodge;
+	/* mix-blend-mode: color-dodge; */
 	perspective: 500px;
 	transform-style: preserve-3d;
 	animation: rotateAngle 3s linear infinite;
@@ -380,7 +388,7 @@ button:before, button:after {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	mix-blend-mode: inherit;
+	mix-blend-mode: color-dodge;
 	border-radius: inherit;
 	transform-style: preserve-3d;
 	transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
@@ -390,13 +398,13 @@ button span {
 	display: block;
 }
 button:after {
-	background-color: salmon;
+	background-color: crimson;
 }
 button:before {
 	background-color: black;
 }
 button:hover {
-	background-color: white;
+	background-color: gray;
 	transition: background 0.3s 0.1s;
 }
 button:hover:before {
@@ -479,7 +487,7 @@ button:hover:after {
 }
 @keyframes text_reveal_name {
     100%{
-        color: blueviolet;
+        color: royalblue;
     }
 }
 @keyframes text_reveal_for {
