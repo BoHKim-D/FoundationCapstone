@@ -1,0 +1,30 @@
+Eightball
+
+User can input a question
+User gets a response from the Eightball
+
+Fortune 
+
+User clicks a button to get a fortune and a lucky number for the day
+
+League of legends lucky champion pick
+
+User click a button for their lucky champion for the day
+Display that chosen champion Picture and their lore
+
+
+* Every user can press each button only once.*
+* optionally add a reset button *
+
+
+Hamburger menu button for each part of functions
+
+Font: Akzentica
+Font Size: 20 - 50
+Font Color: Dark grey - Black
+
+One page Project
+
+http://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion.json
+
+https://developer.riotgames.com/docs/lol#data-dragon_champions
